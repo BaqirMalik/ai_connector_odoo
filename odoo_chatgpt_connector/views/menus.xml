@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Menu Item -->
+    <menuitem id="menu_chat_history_root" name="AI Chat History" sequence="10"/>
+    <menuitem id="menu_chat_history"
+              name="All Chat History"
+              parent="menu_chat_history_root"
+              action="action_chat_history"/>
+</odoo>

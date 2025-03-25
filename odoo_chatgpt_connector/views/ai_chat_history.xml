@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_chat_history_tree_view" model="ir.ui.view">
+        <field name="name">ai.chat.history.list.view</field>
+        <field name="model">ai.chat.history</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="create_date" string="Date"/>
+                <field name="user_id" string="User"/>
+                <field name="request_text" string="Request"/>
+            </list>
+        </field>
+    </record>
+
+
+    <!-- Search View -->
+    <record id="view_ai_chat_history_search" model="ir.ui.view">
+        <field name="name">ai.chat.history.search</field>
+        <field name="model">ai.chat.history</field>
+        <field name="arch" type="xml">
+            <search string="Search AI Chat">
+                <field name="request_text"/>
+                <group expand="1" string="Group By">
+                    <filter name="group_by_user" string="Group By User"  context="{'group_by':'user_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_chat_history_form_view" model="ir.ui.view">
+        <field name="name">ai.chat.history.form.view</field>
+        <field name="model">ai.chat.history</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="user_id" string="User"/>
+                            <field name="create_date" string="Date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="request_text" string="Request" class="oe_inline"/>
+                    </group>
+                    <group>
+                        <field name="response_text" string="Response" widget="html" class="oe_inline"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_chat_history" model="ir.actions.act_window">
+        <field name="name">AI Chat API History</field>
+        <field name="res_model">ai.chat.history</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No chat history found. Start using the chat to see records here.
+            </p>
+        </field>
+    </record>
+</odoo>
