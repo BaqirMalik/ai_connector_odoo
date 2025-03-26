@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="ir.module.category" id="module_category_ai_chat">
+            <field name="name">AI Chat</field>
+            <field name="sequence">60</field>
+            <field name="visible" eval="0"/>
+        </record>
+        <!-- Admin Group -->
+        <record id="group_ai_chat_admin" model="res.groups">
+            <field name="name">AI Chat Admin</field>
+            <field name="category_id" ref="odoo_chatgpt_connector.module_category_ai_chat"/>
+        </record>
+
+        <!-- User Group -->
+        <record id="group_ai_chat_user" model="res.groups">
+            <field name="name">AI Chat User</field>
+            <field name="category_id" ref="odoo_chatgpt_connector.module_category_ai_chat"/>
+        </record>
+
+
+        <!-- Admin Can See All Records -->
+        <record id="rule_ai_chat_admin" model="ir.rule">
+            <field name="name">Admin: View All AI Chat History</field>
+            <field name="model_id" ref="model_ai_chat_history"/>
+            <field name="groups" eval="[(4, ref('odoo_chatgpt_connector.group_ai_chat_admin'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+
+        <!-- User Can Only See Their Own Records -->
+        <record id="rule_ai_chat_user" model="ir.rule">
+            <field name="name">User: View Own AI Chat History</field>
+            <field name="model_id" ref="model_ai_chat_history"/>
+            <field name="groups" eval="[(4, ref('odoo_chatgpt_connector.group_ai_chat_user'))]"/>
+            <field name="domain_force">[('create_uid', '=', user.id)]</field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_ai_chat_history,access_ai_chat_history,model_ai_chat_history,,1,1,1,1
+access_ai_chat_history_admin,access_ai_chat_history_admin,model_ai_chat_history,group_ai_chat_admin,1,1,1,1
+access_ai_chat_history_user,access_ai_chat_history_user,model_ai_chat_history,group_ai_chat_user,1,0,1,0

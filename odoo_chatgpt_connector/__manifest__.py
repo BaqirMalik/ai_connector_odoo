@@ -12,6 +12,7 @@
     'website': 'https://brainbrick.net/',
     'depends': ['website'],
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
         'views/odoo_chatgpt_connector_menus.xml',
         'views/res_config_setting_views.xml',

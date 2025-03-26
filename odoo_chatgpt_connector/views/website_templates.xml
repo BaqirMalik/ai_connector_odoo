@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 <!--    template in website for chatgpt interaction-->
-    <template id="connector" name="Chatgpt Connector">
+    <template id="connector" name="AI Chat Connector">
         <t t-call="website.layout">
             <div id="snippetContent">
                 <div class="container" id="main_layout">

@@ -21,7 +21,7 @@
             <search string="Search AI Chat">
                 <field name="request_text"/>
                 <group expand="1" string="Group By">
-                    <filter name="group_by_user" string="Group By User"  context="{'group_by':'user_id'}"/>
+                    <filter name="group_by_user" string="Group By User" context="{'group_by':'user_id'}"/>
                 </group>
             </search>
         </field>
@@ -42,9 +42,11 @@
                     <group>
                         <field name="request_text" string="Request" class="oe_inline"/>
                     </group>
-                    <group>
-                        <field name="response_text" string="Response" widget="html" class="oe_inline"/>
-                    </group>
+                    <notebook>
+                        <page name="response" string="Response">
+                            <field name="response_text" string="Response" widget="html" class="oe_inline"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

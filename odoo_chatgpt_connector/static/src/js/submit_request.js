@@ -32,8 +32,6 @@ publicWidget.registry.QuestionInput = publicWidget.Widget.extend({
             ["odoo_chatgpt_connector.api_key"]
         );
 
-        console.log("API Key:", this.api_key); // Debug log
-
         if (!this.api_key || this.api_key.trim() === "") {
             throw new Error("API key is not configured in system parameters");
         }
