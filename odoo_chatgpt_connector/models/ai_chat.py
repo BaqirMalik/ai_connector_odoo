@@ -6,6 +6,7 @@ class AiChatHistory(models.Model):
     _description = 'Chat API Request History'
     _order = 'create_date desc'
 
+
     user_id = fields.Many2one(
         'res.users',
         string='User',
