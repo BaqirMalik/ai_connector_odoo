@@ -14,7 +14,7 @@
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
-        'views/odoo_chatgpt_connector_menus.xml',
+        # 'views/odoo_chatgpt_connector_menus.xml',
         'views/res_config_setting_views.xml',
         'views/website_templates.xml',
         'views/ai_chat_history.xml',
